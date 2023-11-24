@@ -23,8 +23,10 @@ createApp({
 				})
 				.then((res) => {
 					console.log(res.data)
-					this.todos = res.data.todos
-					this.newTodo = ''
+                    if(res.data.todos){
+                        this.todos = res.data.todos;
+                    }
+					this.newTodo = '';
 				})
         },
         fetchData(){
