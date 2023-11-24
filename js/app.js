@@ -3,7 +3,7 @@ const { createApp} = Vue;
 createApp({
     data() {
         return {
-            taskName: "",
+            newTodo: "",
             todos: []
         }
     },
@@ -11,13 +11,8 @@ createApp({
         deleteTask(indexTask){
             this.todos.splice(indexTask, 1)
         },
-        addTask(name){
-           this.todos.unshift({
-            text: name,
-            done: false,
-            liList: []
-           }) 
-           this.taskName = "";
+        storeNewTodo(){
+            console.log(this.newTodo)
         },
         isCompliteTask(object){
             console.log("iniziale", object)

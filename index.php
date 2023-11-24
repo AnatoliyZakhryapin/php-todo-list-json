@@ -32,10 +32,10 @@
                 <div class="container">
                     <div class="row tasks-input">
                         <div class="col">
-                           <input placeholder="Name Task" type="text" v-model="taskName"  @keyup.enter="addTask(taskName)">
+                           <input placeholder="Name Task" type="text" v-model="newTodo"  @keyup.enter="storeNewTodo">
                         </div>
                         <div class="col">
-                            <button @click="addTask(taskName)" class="btn">
+                            <button @click="storeNewTodo" class="btn">
                                 New Task
                             </button>
                         </div>
