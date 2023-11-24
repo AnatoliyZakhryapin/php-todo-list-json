@@ -8,9 +8,6 @@ createApp({
         }
     },
     methods: {
-        deleteTask(indexTask){
-            this.todos.splice(indexTask, 1)
-        },
         storeNewTodo(){
             console.log(this.newTodo)
 
@@ -24,15 +21,11 @@ createApp({
 						'Content-Type': 'multipart/form-data',
 					},
 				})
-				.then((res) => {					console.log(res.data)
+				.then((res) => {
+					console.log(res.data)
 					this.todos = res.data.todos
 					this.newTodo = ''
 				})
-        },
-        isCompliteTask(object){
-            console.log("iniziale", object)
-            object.done = !object.done;
-            console.log("finale", object)
         },
         fetchData(){
             axios.get('server.php').then((res) => {
