@@ -3,6 +3,10 @@
 // Assegnamo il valore arriavato dal $_POST chiamata alla variabile
 $new_todo = $_POST['newTodo'] ?? '';
 
+$response = [
+    'success' => true
+];
+
 // Se il dato arravato e non e vuoto:
 if ($new_todo) {
 
@@ -18,19 +22,16 @@ if ($new_todo) {
     ];
 
     // Creamo dati della risposta in formato php:
-    $response = [
-        'success' => true,
-        'todos' => $todos
-      ];
+    $response['todos'] = $todos;
 
     // Risalvare il file:
     // - Codifichiamo array $todos per avere il dato nel formato json(stringa) 
     $todos_string = json_encode($todos);
     // - Salviamo il file con il nuovo contenuto
     file_put_contents('./todos.json', $todos_string);
-    } 
-        // Altrimenti se $new_todo e vuoto non salviamo niente e creamo la variabile della risposta:
-        else {
+} 
+// Altrimenti se $new_todo e vuoto non salviamo niente e creamo la variabile della risposta:
+else {
 
     $response = [
         'success' => false,
