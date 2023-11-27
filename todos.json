@@ -1,14 +1,1 @@
-[
-    {
-        "text": "Fare i compiti",
-        "done": "false"
-    },
-    {
-        "text": "Fare la spesa",
-        "done": "true"
-    },
-    {
-        "text": "Fare il bucato",
-        "done": "false"
-    }
-]
+[{"text":"Fare i compiti","done":"false"},{"text":"Fare la spesa","done":"true"},{"text":"Fare il bucato","done":"false"},{"text":"sadas","done":true},{"text":"sadsa","done":true}]
