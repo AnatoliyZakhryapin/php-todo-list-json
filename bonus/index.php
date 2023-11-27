@@ -43,8 +43,8 @@
                     <div class="row" v-if="todos.length > 0" >
                         <div class="col-4" v-for="(todo, index) in todos">
                             <ul class="task" @click="isCompliteTask(todo)">
-                                <div class="task-title" :class="todo.done === true ? 'line-through' : ''">
-                                    {{ todo.text }}
+                                <div class="task-title">
+                                    <span :class="{ 'line-through': todo.done}">{{ todo.text }}</span>
                                     <i class="fa-solid fa-circle-xmark"></i>
                                 </div>
                             </ul>
