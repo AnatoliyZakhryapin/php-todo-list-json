@@ -48,6 +48,21 @@ createApp({
 					this.todos = res.data.todos;
 				});
         },
+        deleteTodo(index) {
+            const data = {
+                indexTodoToDelete: index
+            };
+
+            axios
+                .post('deleteTodo.php', data, {
+                    headers: {
+						'Content-Type': 'multipart/form-data',
+					},
+                })
+                .then((res) => {				
+					this.todos = res.data.todos;
+				});
+        }
     },
     created() {
 		this.fetchData()

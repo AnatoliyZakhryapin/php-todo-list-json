@@ -42,10 +42,12 @@
                     </div>
                     <div class="row">
                         <div class="col-4" v-for="(todo, index) in todos">
-                            <ul class="task" @click="changeTodoDone(index)">
+                            <ul class="task">
                                 <div class="task-title">
-                                    <span :class="{ 'line-through': todo.done}">{{ todo.text }}</span>
-                                    <i class="fa-solid fa-circle-xmark"></i>
+                                    <span @click="changeTodoDone(index)" :class="{ 'line-through': todo.done}">{{ todo.text }}</span>
+                                    <span @click="deleteTodo(index)">
+                                        <i class="fa-solid fa-circle-xmark"></i>
+                                    </span>
                                 </div>
                             </ul>
                         </div>
