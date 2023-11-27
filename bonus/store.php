@@ -14,7 +14,7 @@ if ($new_todo) {
     // Pushare la nuova todo (ricevuta dal $_POST) nell'array
     $todos[] = [
         'text' => $new_todo,
-        'done' => true
+        'done' => false
     ];
 
     // Creamo dati della risposta in formato php:
